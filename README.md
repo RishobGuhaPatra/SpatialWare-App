@@ -6,5 +6,5 @@ This is an application that supports and stores data on a phone locally for a sm
 Run Application
 1. Please clone the repository
 2. Navigate into the project directory
-3. Run npm install in terminal
-4. Run ionic serve in terminal
+3. Run ``` npm install ``` in terminal
+4. Run ``` ionic serve ``` in terminal
