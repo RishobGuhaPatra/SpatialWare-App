@@ -12,21 +12,25 @@
   </ion-item>
     <br />
     <br />
-    <ion-button center>
+    <ion-text class="battery"> 
       Battery Status
-    </ion-button>
+    </ion-text>
+
   <br />
-  <br />
-  <ion-label>
-    Glasses
-  </ion-label>
-  <ion-progress-bar value="0.5"></ion-progress-bar>
-  <br />
-  <br />
-  <ion-label>
-    Belt
-  </ion-label>
-  <ion-progress-bar value="0.7"></ion-progress-bar>
+  <ion-list>
+      <ion-list-header>
+          <ion-icon padding  name="glasses"></ion-icon>
+        <ion-label>Glasses at 80%</ion-label>
+      </ion-list-header>
+      <ion-progress-bar color="success" value="0.8"></ion-progress-bar>
+    </ion-list>
+    <ion-list>
+      <ion-list-header>
+          <ion-icon padding  name="git-commit"></ion-icon>
+        <ion-label>Belt at 50%</ion-label>
+      </ion-list-header>
+      <ion-progress-bar color="success" value="0.5"></ion-progress-bar>
+    </ion-list>
 
   <br />
   <br />
