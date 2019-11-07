@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-back-button slot="start" defaultHref="home"></ion-back-button>
+          <ion-title>emergency-info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item lines="none">
+        <img src="../../assets/icon/hide.png" class="img" height="60" width="60" />
+      </ion-item>
+        <br />
+        <br />
+  <ion-item>
+      <ion-input [(ngModel)]="contactName" placeholder="Contact Name" ></ion-input>
+  </ion-item>  
+
+<ion-item>
+    <ion-input [(ngModel)]="contactNumber" placeholder=" Contact Phone Number"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Call when fall</ion-label>
+  <ion-toggle color="secondary"></ion-toggle>
+</ion-item>
+
+<ion-item>
+    <ion-label>Call contact when press button</ion-label>
+    <ion-toggle color="secondary"></ion-toggle>
+  </ion-item>
+
+</ion-content>

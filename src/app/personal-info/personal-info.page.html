@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-back-button slot="start" defaultHref="home"></ion-back-button>
+          <ion-title>Personal Information</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item lines="none">
+        <img src="../../assets/icon/hide.png" class="img" height="60" width="60" />
+      </ion-item>
+        <br />
+        <br />
+  <ion-item>
+      <ion-input [(ngModel)]="firstname" placeholder="First Name" ></ion-input>
+  </ion-item>  
+
+<ion-item>
+    <ion-input [(ngModel)]="lastname" placeholder="Last Name"></ion-input>
+</ion-item>
+    <ion-item>
+        <ion-label>Number of modules on belt</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="moduleNum" >
+          <ion-select-option value="8">8 modules</ion-select-option>
+          <ion-select-option value="10">10 modules</ion-select-option>
+          <ion-select-option value="12">12 modules</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-text>
+        {{ firstname }}
+      </ion-text>
+
+</ion-content>
