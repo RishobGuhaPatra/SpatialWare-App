@@ -1,5 +1,7 @@
 {
   "name": "SpatialWare",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
