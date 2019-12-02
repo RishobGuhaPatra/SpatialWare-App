@@ -7,65 +7,61 @@
 </ion-header>
 
 <ion-content>
+    <br/>
+    <br/>
   <ion-item lines="none">
-    <img src="../../assets/icon/hide.png" class="img" height="60" width="60" />
+    <img src="../../assets/icon/hide.png" class="img" />
   </ion-item>
+  <br />
+  <br />
+  <ion-card>
+    <ion-item lines="none">
+      <ion-card-subtitle class="battery">
+        Battery Status
+      </ion-card-subtitle>
+    </ion-item>
+    <br />
+    <ion-item>
+      <ion-list>
+        <ion-list-header>
+          <ion-icon padding name="glasses"></ion-icon>
+          <ion-label>Glasses at 80%</ion-label>
+        </ion-list-header>
+        <ion-progress-bar color="success" value="0.8"></ion-progress-bar>
+      </ion-list>
+    </ion-item>
+    <ion-item>
+      <ion-list>
+        <ion-list-header>
+          <ion-icon padding name="git-commit"></ion-icon>
+          <ion-label>Belt at 50%</ion-label>
+        </ion-list-header>
+        <ion-progress-bar color="success" value="0.5"></ion-progress-bar>
+      </ion-list>
+    </ion-item>
     <br />
     <br />
-    <ion-text class="battery"> 
-      Battery Status
-    </ion-text>
+  </ion-card>
 
-  <br />
-  <ion-list>
-      <ion-list-header>
-          <ion-icon padding  name="glasses"></ion-icon>
-        <ion-label>Glasses at 80%</ion-label>
-      </ion-list-header>
-      <ion-progress-bar color="success" value="0.8"></ion-progress-bar>
-    </ion-list>
-    <ion-list>
-      <ion-list-header>
-          <ion-icon padding  name="git-commit"></ion-icon>
-        <ion-label>Belt at 50%</ion-label>
-      </ion-list-header>
-      <ion-progress-bar color="success" value="0.5"></ion-progress-bar>
-    </ion-list>
-
-  <br />
-  <br />
-
-  <ion-button expand="block" href="/personal-info ">
-    Personal Information</ion-button
-  >
-  
   <ion-button expand="block" href="/emergency-info ">
     Emergency Information</ion-button
   >
-  <ion-button expand="block" href="/waist-calculation ">
-    Waist Calculation
-  </ion-button>
-  <ion-button expand="block" href="/voice-settings ">
-    Voice Settings</ion-button
-  >
-</ion-content>
 
-<ion-content>
+  <ion-button expand="block" href="/voice-settings "> Settings</ion-button>
+
   <ion-toolbar>
-      <ion-title>BLE Scanner</ion-title>
-      <ion-button (click)="Scan()" slot="end">
-          <ion-icon name="Bluetooth"></ion-icon>
-          <p>Scan</p>
-      </ion-button>
+    <ion-title>BLE Scanner</ion-title>
+    <ion-button (click)="Scan()" slot="end">
+      <ion-icon name="Bluetooth"></ion-icon>
+      <p>Scan</p>
+    </ion-button>
   </ion-toolbar>
-</ion-content>
 
-<ion-content>
   <ion-list>
-      <ion-card-content ion-item *ngFor="let device of devices">
-          <p (click)="ConnectToBT(device)">{{device.name || 'Unnamed'}}</p>
-          <p>{{device.id}}</p>
-          <p> RSSI: {{device.rssi}}</p>
-      </ion-card-content>
+    <ion-card-content ion-item *ngFor="let device of devices">
+      <p (click)="ConnectToBT(device)">{{device.name || 'Unnamed'}}</p>
+      <p>{{device.id}}</p>
+      <p>RSSI: {{device.rssi}}</p>
+    </ion-card-content>
   </ion-list>
 </ion-content>

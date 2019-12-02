@@ -6,16 +6,20 @@
 </ion-header>
 
 <ion-content>
+  <br/>
+  <br/>
     <ion-item lines="none">
-        <img src="../../assets/icon/hide.png" class="img" height="60" width="60" />
+        <img src="../../assets/icon/hide.png" class="img" />
       </ion-item>
-        <br />
-        <br />
+      <br />
+      <br />
   <ion-item>
+    <ion-text>Name: </ion-text>
       <ion-input [(ngModel)]="contactName" placeholder="Contact Name" ></ion-input>
   </ion-item>  
 
 <ion-item>
+    <ion-text>Number: </ion-text>
     <ion-input [(ngModel)]="contactNumber" placeholder=" Contact Phone Number"></ion-input>
 </ion-item>
 
@@ -28,5 +32,9 @@
     <ion-label>Call contact when press button</ion-label>
     <ion-toggle color="secondary"></ion-toggle>
   </ion-item>
+  <ion-item>
+      <ion-label>Allow GPS location tracking</ion-label>
+      <ion-toggle color="secondary"></ion-toggle>
+    </ion-item>
 
 </ion-content>
