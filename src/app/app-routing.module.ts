@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'personal-info', loadChildren: './personal-info/personal-info.module#PersonalInfoPageModule' },
   { path: 'emergency-info', loadChildren: './emergency-info/emergency-info.module#EmergencyInfoPageModule' },
@@ -10,6 +10,8 @@ const routes: Routes = [
   { path: 'mode-settings', loadChildren: './mode-settings/mode-settings.module#ModeSettingsPageModule' },
   { path: 'waist-calculation', loadChildren: './waist-calculation/waist-calculation.module#WaistCalculationPageModule' },
   { path: 'voice-settings', loadChildren: './voice-settings/voice-settings.module#VoiceSettingsPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
 ];
 
 @NgModule({
