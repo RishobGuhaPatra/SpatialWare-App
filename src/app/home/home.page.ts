@@ -17,17 +17,10 @@ export class HomePage {
               private toastCtrl: ToastController) {
   }
 
-
-  ionViewDidEnter() {
-    console.log('ionViewDidEnter');
-    this.scan();
-  }
-
-  scan() {
-    this.devices = [];            //Clear list
-    this.ble.scan([], 5).subscribe(
-        device => this.onDeviceDiscovered(device),
-        //error => this.scanError(error)
+  Scan() {
+    this.devices = [];
+    this.ble.scan([], 15).subscribe(
+        device => this.onDeviceDiscovered(device)
     );
   
 }
@@ -43,11 +36,6 @@ export class HomePage {
       this.setStatus('');
       this.peripheral = peripheral;
     });
-    let toast = this.toastCtrl.create({
-      message: 'Connected to peripheral',
-      duration: 3000,
-      position: 'middle'
-    })
   }
 
   async onDeviceDisconnected(peripheral) {
