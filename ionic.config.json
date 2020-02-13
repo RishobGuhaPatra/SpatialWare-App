@@ -1,7 +1,8 @@
 {
   "name": "SpatialWare",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

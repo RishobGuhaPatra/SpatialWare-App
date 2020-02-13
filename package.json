@@ -1,5 +1,5 @@
 {
-  "name": "SpatialWare",
+  "name": "com.eftb.spatialware",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -20,6 +20,8 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@capacitor/android": "^1.5.0",
+    "@capacitor/core": "1.5.0",
     "@ionic-native/ble": "^5.16.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/firebase": "^5.21.4",
@@ -33,8 +35,14 @@
     "cordova-android": "^8.1.0",
     "cordova-plugin-ble-central": "^1.2.4",
     "cordova-plugin-bluetoothle": "^4.5.6",
+    "cordova-plugin-device": "2.0.2",
     "cordova-plugin-firebase": "^2.0.5",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^4.0.0",
     "cordova-plugin-nativestorage": "^2.3.2",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "2.4.2",
+    "cordova-plugin-whitelist": "1.3.3",
     "cordova-sqlite-storage": "^4.0.0",
     "core-js": "^2.5.4",
     "firebase": "^7.7.0",
@@ -42,13 +50,7 @@
     "rxjs-compat": "^6.5.4",
     "tslib": "^1.9.0",
     "uk.co.workingedge.cordova.plugin.sqliteporter": "^1.1.1",
-    "zone.js": "~0.9.1",
-    "cordova-plugin-whitelist": "1.3.3",
-    "cordova-plugin-statusbar": "2.4.2",
-    "cordova-plugin-device": "2.0.2",
-    "cordova-plugin-splashscreen": "5.0.2",
-    "cordova-plugin-ionic-webview": "^4.0.0",
-    "cordova-plugin-ionic-keyboard": "^2.0.5"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.801.2",
@@ -59,6 +61,7 @@
     "@angular/compiler": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
+    "@capacitor/cli": "1.5.0",
     "@ionic/angular-toolkit": "~2.0.0",
     "@ionic/lab": "^2.0.19",
     "@types/jasmine": "~3.3.8",
@@ -101,8 +104,6 @@
       "cordova-sqlite-storage": {},
       "cordova-plugin-nativestorage": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
   }
 }
