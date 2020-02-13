@@ -1,40 +1,60 @@
 <ion-header>
   <ion-toolbar>
-      <ion-back-button slot="start" defaultHref="home"></ion-back-button>
-          <ion-title>Emergency Contacts</ion-title>
+    <ion-back-button slot="start" defaultHref="home"></ion-back-button>
+    <ion-title>Emergency Contacts</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <br/>
-  <br/>
-    <ion-item lines="none">
-        <img src="../../assets/icon/hide.png" class="img" />
-      </ion-item>
-      <br />
-      <br />
-  <ion-item>
-    <ion-text>Name: </ion-text>
-      <ion-input [(ngModel)]="contactName" placeholder="Contact Name" ></ion-input>
-  </ion-item>  
-
-<ion-item>
-    <ion-text>Number: </ion-text>
-    <ion-input [(ngModel)]="contactNumber" placeholder=" Contact Phone Number"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Call when fall</ion-label>
-  <ion-toggle color="secondary"></ion-toggle>
-</ion-item>
-
-<ion-item>
-    <ion-label>Call contact when press button</ion-label>
-    <ion-toggle color="secondary"></ion-toggle>
+  <ion-item lines="full">
+    <img src="../../assets/icon/hide.png" class="img" />
   </ion-item>
-  <ion-item>
-      <ion-label>Allow GPS location tracking</ion-label>
-      <ion-toggle color="secondary"></ion-toggle>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input formControlName="contactName" type="text" placeholder="Contact Name" required></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label>Number</ion-label>
+      <ion-input formControlName="contactNumber" type="Phone" placeholder="Contact Phone Number" required></ion-input>
+    </ion-item>
+
+    <ion-list lines="full">
+      <ion-list-header>
+        <ion-label>Select All That Apply</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Call on Fall</ion-label>
+        <ion-checkbox ></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Call on Press</ion-label>
+        <ion-checkbox ></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Allow GPS Tracking</ion-label>
+        <ion-checkbox ></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contactName.errors?.required">
+      Name is required.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contactName.errors?.minlength">
+      Name should be min 2 chars long.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contactNumber.errors?.minlength">
+      Phone number should be 10 numbers long.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.contactNumber.errors?.maxlength">
+      Phone number should be 10 numbers long.
+    </span>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
