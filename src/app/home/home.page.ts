@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { BLE } from '@ionic-native/ble';
+import { BLE } from '@ionic-native/ble/ngx';
 import { ConnectableObservable } from 'rxjs';
 import { NavController, ToastController } from '@ionic/angular';
 
@@ -66,7 +66,7 @@ export class HomePage {
 
   async onDeviceDisconnected(peripheral) {
     let toast = this.toastCtrl.create({
-      message: 'The peripheral unexpectedly disconnected',
+      message: 'The periphesral unexpectedly disconnected',
       duration: 3000,
       position: 'middle'
     });
