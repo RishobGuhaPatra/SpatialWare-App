@@ -1209,7 +1209,6 @@ resources/android/icon/drawable-xxxhdpi-icon.png
 resources/android/icon/drawable-xxhdpi-icon.png
 resources/android/icon/drawable-xhdpi-icon.png
 resources/android/icon/drawable-mdpi-icon.png
-resources/android/icon/drawable-ldpi-icon.png
 plugins/fetch.json
 plugins/cordova-plugin-whitelist/src/android/WhitelistPlugin.java
 plugins/cordova-plugin-whitelist/RELEASENOTES.md
