@@ -1,7 +1,8 @@
 import { Component, NgZone } from '@angular/core';
-import { BLE } from '@ionic-native/ble/ngx';
+import { BLE } from '@ionic-native/ble';
 import { ConnectableObservable } from 'rxjs';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,9 @@ export class HomePage {
   toast: any;
   statusMessage: string;
   peripheral: any = {};
-  devices:any[] = [];
-  constructor(private ble: BLE, private ngZone: NgZone,
-              private toastCtrl: ToastController) {
+  devices: any[] = [];
+  constructor(public navCtrl: NavController, private ble: BLE, private ngZone: NgZone,
+    private toastCtrl: ToastController) {
   }
 
 
@@ -24,13 +25,25 @@ export class HomePage {
   }
 
   scan() {
+    this.setStatus('Scanning for BLE devices');
     this.devices = [];            //Clear list
     this.ble.scan([], 5).subscribe(
-        device => this.onDeviceDiscovered(device),
-        //error => this.scanError(error)
+      device => this.onDeviceDiscovered(device),
+      error => this.scanError(error)
     );
-  
-}
+    setTimeout(this.setStatus.bind(this), 5000, "Scan Complete");
+  }
+
+  async scanError(error) {
+    this.setStatus('Error ' + error);
+    let toast = await this.toastCtrl.create({
+      message: 'Error scanning for BLE devices',
+      position: 'middle',
+      duration: 3000
+    });
+    toast.present();
+  }
+
   ConnectToBT(device) {
     this.ble.connect(device.id).subscribe(
       peripheral => this.onConnected(peripheral),
@@ -38,7 +51,7 @@ export class HomePage {
     );
   }
 
-  onConnected(peripheral) {
+  async onConnected(peripheral) {
     this.ngZone.run(() => {
       this.setStatus('');
       this.peripheral = peripheral;
@@ -47,7 +60,8 @@ export class HomePage {
       message: 'Connected to peripheral',
       duration: 3000,
       position: 'middle'
-    })
+    });
+    (await toast).present();
   }
 
   async onDeviceDisconnected(peripheral) {
@@ -67,22 +81,22 @@ export class HomePage {
   }
 
   onDeviceDiscovered(device) {
-      console.log('Discovered' + JSON.stringify(device, null, 2));
-      this.ngZone.run(()=>{
-          this.devices.push(device)
-          console.log(device)
-      })
+    console.log('Discovered' + JSON.stringify(device, null, 2));
+    this.ngZone.run(() => {
+      this.devices.push(device)
+      console.log(device)
+    });
   }
   stringToBytes(string: any) {
-  var array = new Uint8Array(string.length);
-  for (var i = 0, l = string.length; i < l; i++) {
-    array[i] = string.charCodeAt(i);
-  }
-  return array.buffer;
+    var array = new Uint8Array(string.length);
+    for (var i = 0, l = string.length; i < l; i++) {
+      array[i] = string.charCodeAt(i);
+    }
+    return array.buffer;
   }
 
   // receiving data 
   bytesToString(buffer) {
-  return String.fromCharCode.apply(null, new Uint8Array(buffer));
+    return String.fromCharCode.apply(null, new Uint8Array(buffer));
   }
 }
