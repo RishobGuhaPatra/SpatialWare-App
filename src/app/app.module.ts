@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import firebaseConfig from './firebase'
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireAuthModule } from '@angular/fire/auth'
+import { UserService } from './user.service';
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
@@ -25,7 +26,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
     ngx.BLE,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UserService
   ],
   bootstrap: [AppComponent]
 })
