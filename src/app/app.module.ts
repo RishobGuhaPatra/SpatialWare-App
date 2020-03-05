@@ -13,16 +13,23 @@ import { AppRoutingModule } from './app-routing.module';
 import firebaseConfig from './firebase'
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireAuthModule } from '@angular/fire/auth'
-import { UserService } from './user.service';
+import { UserService } from './services/user.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { FavoriteService } from './services/favorite.service';
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
-    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    imports: [  BrowserModule, 
+                IonicModule.forRoot(), 
+                AppRoutingModule,
+                AngularFireModule.initializeApp(firebaseConfig),
+                AngularFireAuthModule,
     ],
   providers: [
-    
+    AngularFirestore,
     ngx.BLE,
     StatusBar,
     SplashScreen,

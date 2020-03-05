@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { AngularFireStore, AngularFirestore } from '@angular/fire/firestore';
-import { UserService } from '../user.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { UserService } from '../services/user.service';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +22,7 @@ export class RegisterPage implements OnInit {
       public afstore: AngularFirestore,
       public user: UserService,
       public alertController: AlertController,
+      public router: Router,
       ) { }
 
     ngOnInit() {
@@ -51,6 +53,9 @@ export class RegisterPage implements OnInit {
             username,
             uid: res.user.uid
           })
+
+          this.presentAlert('Success', 'You are registered!')
+          this.router.navigate(['/home'])
         } catch(error) {
         console.dir(error)
       }
