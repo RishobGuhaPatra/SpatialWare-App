@@ -1,9 +1,9 @@
 {
   "appId": "com.eftb.spatialware",
-  "appName": "SpatialWare",
+  "appName": "spatialware",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www",
+  "webDir": "src",
   "cordova": {
     "preferences": {
       "ScrollEnabled": "false",

@@ -1,4 +1,4 @@
-node_modules
+
 www/waist-calculation-waist-calculation-module-es5.js.map
 www/waist-calculation-waist-calculation-module-es5.js
 www/waist-calculation-waist-calculation-module-es2015.js.map
@@ -2784,8 +2784,6 @@ plugins/cordova-sqlite-storage/scripts/prepareSpec.js
 plugins/cordova-sqlite-storage/scripts/beforePluginInstall.js
 plugins/cordova-sqlite-storage/README.md
 plugins/cordova-sqlite-storage/plugin.xml
-plugins/cordova-sqlite-storage/package.json
-plugins/cordova-sqlite-storage/package-lock.json
 plugins/cordova-sqlite-storage/LICENSE.md
 plugins/cordova-sqlite-storage/HISTORY.md
 plugins/cordova-sqlite-storage/CONTRIBUTING.md
@@ -2921,7 +2919,6 @@ plugins/cordova-plugin-advanced-http/.github/ISSUE_TEMPLATE/--feature-request.md
 plugins/cordova-plugin-advanced-http/.github/ISSUE_TEMPLATE/--support-question.md
 plugins/cordova-plugin-advanced-http/.github/workflows/ci.yml
 plugins/cordova-plugin-advanced-http/.travis.yml
-plugins/cordova-plugin-advanced-http/.vscode/settings.json
 plugins/cordova-plugin-advanced-http/CHANGELOG.md
 plugins/cordova-plugin-advanced-http/CONTRIBUTING.md
 plugins/cordova-plugin-advanced-http/LICENSE
@@ -6045,3 +6042,4 @@ platforms/android/gradle/wrapper/gradle-wrapper.jar
 platforms/android/gradle/wrapper/gradle-wrapper.properties
 platforms/android/gradlew
 platforms/android/gradlew.bat
+node_modules

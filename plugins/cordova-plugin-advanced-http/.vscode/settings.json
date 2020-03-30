@@ -1,0 +1,5 @@
+{
+    "editor.tabSize": 2,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\Bin\\bash.exe",
+    "terminal.integrated.shellArgs.windows": ["--login", "-i"]
+}
